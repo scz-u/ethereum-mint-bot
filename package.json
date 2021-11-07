@@ -1,0 +1,9 @@
+{
+  "name": "ethereum-mint-bot",
+  "version": "1.0.0",
+  "description": "A free bot for minting NFTs on the Ethereum network",
+  "main": "dist/index.js",
+  "repository": "https://github.com/frazierjoe/ethereum-mint-bot.git",
+  "author": "Joe <frazierj@wustl.edu>",
+  "license": "GNU"
+}
