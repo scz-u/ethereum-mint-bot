@@ -1,9 +1,27 @@
 {
-  "name": "ethereum-mint-bot",
-  "version": "1.0.0",
-  "description": "A free bot for minting NFTs on the Ethereum network",
-  "main": "dist/index.js",
-  "repository": "https://github.com/frazierjoe/ethereum-mint-bot.git",
-  "author": "Joe <frazierj@wustl.edu>",
-  "license": "GNU"
+    "name": "ethereum-mint-bot",
+    "version": "1.0.0",
+    "type": "module",
+    "description": "A free bot for minting NFTs on the Ethereum network",
+    "exports": "./dist/index.js",
+    "types": "./dist/index.d.js",
+    "files": [
+        "dist"
+    ],
+    "repository": "https://github.com/frazierjoe/ethereum-mint-bot.git",
+    "author": "Joe <frazierj@wustl.edu>",
+    "license": "GNU",
+    "scripts": {
+        "build": "tsc",
+        "start": "yarn run build && node ./dist/index.js"
+    },
+
+    "dependencies": {
+        "dotenv": "^10.0.0",
+        "ethers": "^5.5.1",
+        "inquirer": "^8.2.0"
+    },
+    "devDependencies": {
+        "@types/inquirer": "^8.1.3"
+    }
 }
