@@ -15,7 +15,6 @@
         "outDir": "./dist",
         "allowJs": false,
         "noImplicitAny": true,
-        "noUnusedLocals": true,
         "strict": true,
     },
     "include": [
