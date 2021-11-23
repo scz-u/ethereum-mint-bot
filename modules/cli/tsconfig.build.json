@@ -7,9 +7,14 @@
     "rootDir": "./src",
     "outDir": "./dist",
   },
+
   "include": [
     "src/**/*"
   ],
-
+  "references": [
+    {
+      "path": "../minter/tsconfig.build.json"
+    }
+  ],
   "exclude": ["node_modules", "dist"]
 }

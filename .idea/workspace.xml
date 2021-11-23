@@ -2,17 +2,28 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="57c13c12-075f-444a-89ef-51a338e613df" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/modules/minter/tsconfig.build.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/modules/website/tsconfig.build.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tsconfig.build.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tsconfig.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/modules/cli/src/ui.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/modules/cli/tsconfig.build.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/modules/cli/tsconfig.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/modules/minter/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/modules/minter/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/modules/minter/tsconfig.json" beforeDir="false" afterPath="$PROJECT_DIR$/modules/minter/tsconfig.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/modules/website/config/modules.js" beforeDir="false" afterPath="$PROJECT_DIR$/modules/website/config/modules.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/modules/website/config/paths.js" beforeDir="false" afterPath="$PROJECT_DIR$/modules/website/config/paths.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/modules/website/tsconfig.json" beforeDir="false" afterPath="$PROJECT_DIR$/modules/website/tsconfig.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/modules/minter/src/cli/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/modules/cli/src/index.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/modules/minter/src/cli/promptAmountToMint.ts" beforeDir="false" afterPath="$PROJECT_DIR$/modules/cli/src/prompts/promptAmountToMint.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/modules/minter/src/cli/promptContractAddress.ts" beforeDir="false" afterPath="$PROJECT_DIR$/modules/cli/src/prompts/promptContractAddress.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/modules/minter/src/cli/promptJsonRpcUrl.ts" beforeDir="false" afterPath="$PROJECT_DIR$/modules/cli/src/prompts/promptJsonRpcUrl.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/modules/minter/src/cli/promptMintMethod.ts" beforeDir="false" afterPath="$PROJECT_DIR$/modules/cli/src/prompts/promptMintMethod.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/modules/minter/src/cli/promptPricePerMint.ts" beforeDir="false" afterPath="$PROJECT_DIR$/modules/cli/src/prompts/promptPricePerMint.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/modules/minter/src/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/modules/minter/src/index.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/modules/minter/src/utils/isDev.ts" beforeDir="false" afterPath="$PROJECT_DIR$/modules/cli/src/utils/isDev.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/modules/minter/src/utils/setTerminalTitle.ts" beforeDir="false" afterPath="$PROJECT_DIR$/modules/cli/src/utils/setTerminalTitle.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/modules/minter/tsconfig.build.json" beforeDir="false" afterPath="$PROJECT_DIR$/modules/minter/tsconfig.build.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/modules/minter/yarn.lock" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/modules/website/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/modules/website/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/modules/website/src/App.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/modules/website/src/App.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/modules/website/tsconfig.build.json" beforeDir="false" afterPath="$PROJECT_DIR$/modules/website/tsconfig.build.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tsconfig.build.json" beforeDir="false" afterPath="$PROJECT_DIR$/tsconfig.build.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tsconfig.json" beforeDir="false" afterPath="$PROJECT_DIR$/tsconfig.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -33,11 +44,14 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="nodejs_package_manager_path" value="npm" />
-    <property name="ts.external.directory.path" value="$PROJECT_DIR$/modules/minter/node_modules/typescript/lib" />
+    <property name="ts.external.directory.path" value="$PROJECT_DIR$/node_modules/typescript/lib" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/modules/cli/src/prompts" />
+      <recent name="$PROJECT_DIR$/modules/cli/src/utils" />
+      <recent name="$PROJECT_DIR$/modules/cli/src" />
       <recent name="$PROJECT_DIR$/modules/minter" />
     </key>
   </component>
@@ -49,7 +63,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1637635820455</updated>
-      <workItem from="1637635823862" duration="4113000" />
+      <workItem from="1637635823862" duration="8126000" />
     </task>
     <servers />
   </component>

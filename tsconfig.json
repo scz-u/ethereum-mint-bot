@@ -5,6 +5,7 @@
     "baseUrl": "./modules",
     "paths": {
       "@jfrazier-eth/minter": ["minter/src"],
+      "@jfrazier-eth/cli": ["cli/src"],
     }
   }
 }

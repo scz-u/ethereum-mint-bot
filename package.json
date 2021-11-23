@@ -4,6 +4,9 @@
   "repository": "https://github.com/frazierjoe/ethereum-mint-bot.git",
   "author": "Joe <frazierj@wustl.edu>",
   "private": true,
+  "workspaces": [
+    "modules/*"
+  ],
   "devDependencies": {
     "lerna": "^4.0.0"
   }
