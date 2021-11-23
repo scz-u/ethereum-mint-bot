@@ -1,9 +1,2 @@
-import { setup } from './cli/index.js';
-
-async function main(){
-
-    await setup();
-
-}
-
-main();
+export { Contract } from "./models/Contract.js";
+export { getContractABI } from './services/etherscan.js';

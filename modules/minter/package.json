@@ -1,9 +1,13 @@
 {
-    "name": "minter",
+    "name": "@jfrazier-eth/minter",
     "version": "1.0.0",
-    "type": "module",
+    "type": "commonjs",
+    "engines": {
+        "node": ">=12"
+    },
+    "main": "./dist/index.js",
     "exports": "./dist/index.js",
-    "types": "./dist/index.d.js",
+    "types": "./dist/index.d.ts",
     "files": [
         "dist"
     ],
