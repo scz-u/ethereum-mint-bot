@@ -37,10 +37,18 @@ export async function setup() {
 
     const amountToMint = await getAmountToMint();
 
-    setTerminalTitle(`Amount to mint: ${amountToMint}. Total Price: ${pricePerMintInWei.div(BigNumber.from(10).pow(15)).toNumber() / 100} ETH`)
+    const totalPrice = pricePerMintInWei.mul(amountToMint);
 
-    
+    setTerminalTitle(`Amount to mint: ${amountToMint}. Total Price: ${totalPrice.div(BigNumber.from(10).pow(15)).toNumber() / 100} ETH`)
 
+    return {
+        provider,
+        contract,
+        mintMethodName,
+        pricePerMintInWei,
+        amountToMint,
+        totalPrice
+    }
 }
 
 /**

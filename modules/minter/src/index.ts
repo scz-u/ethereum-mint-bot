@@ -1,9 +1,8 @@
-import { setup } from './ui/index.js';
+import { setup } from './cli/index';
 
 async function main(){
 
     await setup();
-
 
 }
 
