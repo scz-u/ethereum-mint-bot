@@ -2,16 +2,13 @@
     "name": "minter",
     "version": "1.0.0",
     "type": "module",
-    "description": "A free bot for minting NFTs on the Ethereum network",
     "exports": "./dist/index.js",
     "types": "./dist/index.d.js",
     "files": [
         "dist"
     ],
-    "repository": "https://github.com/frazierjoe/ethereum-mint-bot.git",
-    "author": "Joe <frazierj@wustl.edu>",
     "scripts": {
-        "build": "tsc",
+        "build": "tsc -p tsconfig.build.json",
         "start": "yarn run build && node ./dist/index.js",
         "start:dev": "yarn run build && cross-env MODE=development node ./dist/index.js"
     },

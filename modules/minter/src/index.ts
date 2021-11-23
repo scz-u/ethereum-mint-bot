@@ -1,4 +1,4 @@
-import { setup } from './cli/index';
+import { setup } from './cli/index.js';
 
 async function main(){
 

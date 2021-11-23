@@ -1,5 +1,8 @@
 {
-  "name": "ethereum-automation",
+  "name": "@jfrazier-eth/ethereum-mint-bot",
+  "description": "A free bot for minting NFTs on the Ethereum network",
+  "repository": "https://github.com/frazierjoe/ethereum-mint-bot.git",
+  "author": "Joe <frazierj@wustl.edu>",
   "private": true,
   "devDependencies": {
     "lerna": "^4.0.0"

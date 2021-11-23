@@ -1,27 +1,3 @@
 {
-    "compilerOptions": {
-        "lib": [
-            "ES2020",
-            "DOM"
-        ],
-        "module": "ES2020",
-        "moduleResolution": "node",
-        "target": "ES2020",
-        "downlevelIteration": true,
-        "declaration": true,
-        "sourceMap": true,
-        "esModuleInterop": true,
-        "rootDir": "./src",
-        "outDir": "./dist",
-        "allowJs": false,
-        "noImplicitAny": true,
-        "strict": true,
-    },
-    "include": [
-        "src/**/*"
-    ],
-    "exclude": [
-        "node_modules",
-        "dist"
-    ]
+    "extends": "../../tsconfig.json"
 }
