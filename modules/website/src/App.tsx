@@ -2,12 +2,14 @@ import React from 'react'
 import Title from './components/atoms/Title'
 import SearchBar from './components/organisms/SearchBar'
 import ContractContext, { defaultContractContext } from './context/ContractContext';
+import { getContractABI } from './services/contract.service';
 
 
 function App() {
 
-  const search= (query: string) => {
-    console.log(query);
+  const search = async (query: string) => {
+    const abi = await getContractABI(query);
+    console.log(abi );
   }
 
     return (
