@@ -5,6 +5,13 @@
 # ethereum-mint-bot
 A free bot for minting NFTs on the Ethereum network
 
+## Goals:
+* No failed transactions 
+* No pending transaction locking up your wallet
+* Frontrunning protection
+* Easily adjustable gas prices and cancellation
+* Eliminate the "click race"
+* FREE
 
 ## Why:
 * NFT minting is dominated by people with a technological advantage, this project aims to provide a competetive advantage for people that aren't software developers.
