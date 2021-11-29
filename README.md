@@ -1,5 +1,5 @@
 # STILL IN DEVELOPMENT. DOES NOT WORK.
-* I'm hoping to have this complete with a full web-based UI by Dec 12th 2021.
+* I'm hoping to have this complete with a full web-based UI by **Dec 12th 2021**.
 * In the meantime, feel free to leave a star :)
 
 # ethereum-mint-bot
