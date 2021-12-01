@@ -1,6 +1,7 @@
 # STILL IN DEVELOPMENT. DOES NOT WORK.
 * I'm hoping to have this complete with a full web-based UI by **Dec 12th 2021**.
-* In the meantime, feel free to leave a star :)
+* In the meantime, feel free to leave a star or join the discord :)
+* [**DISCORD**](https://discord.gg/UnRp4xDH)
 
 # ethereum-mint-bot
 A free bot for minting NFTs on the Ethereum network
