@@ -1,5 +1,5 @@
 import React, { useContext, useEffect } from 'react'
-import { Box, Center, Text } from '@chakra-ui/layout'
+import { Center, Text } from '@chakra-ui/layout'
 import { useState } from 'react'
 import ContractContext from '../../context/ContractContext'
 import { getContractABI } from '../../services/contract.service'
@@ -7,6 +7,7 @@ import { Spinner } from '@chakra-ui/spinner'
 import { Input, InputGroup, InputRightElement } from '@chakra-ui/input'
 import { Button } from '@chakra-ui/button'
 import { ethers } from 'ethers'
+import Section from '../Section/Section'
 
 export default function ContractSelector() {
     const contractContext = useContext(ContractContext)
@@ -97,8 +98,9 @@ export default function ContractSelector() {
     }
 
     return (
-        <Box borderWidth="1px" borderRadius="lg" borderColor="teal" p="1rem">
+        <Section>
             {isLoading ? <Spinner color="blue" /> : <Contract />}
-        </Box>
+        </Section>
+
     )
 }

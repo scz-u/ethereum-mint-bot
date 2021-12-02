@@ -5,12 +5,13 @@ import { Box } from '@chakra-ui/react'
 import React, { useContext } from 'react'
 import ContractContext from '../../context/ContractContext'
 import NetworkSelector from '../NetworkSelector/NetworkSelector'
+import Section from '../Section/Section'
 
 export default function ProviderInput() {
     const { providerURL, setProviderURL } = useContext(ContractContext)
 
     return (
-        <Box borderWidth="1px" borderRadius="lg" borderColor="teal" p="1rem">
+        <Section>
             <Text>JSON RPC Provider URL</Text>
             <Center p="1rem">
                 <InputGroup size="md">
@@ -28,6 +29,6 @@ export default function ProviderInput() {
             <Center p="1rem">
                 <NetworkSelector />
             </Center>
-        </Box>
+        </Section>
     )
 }
