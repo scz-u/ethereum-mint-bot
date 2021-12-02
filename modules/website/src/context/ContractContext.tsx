@@ -1,32 +1,37 @@
 import React, { useEffect, useState } from "react";
-import * as ethers from 'ethers';
+import {providers, ContractInterface, Contract} from 'ethers';
+import { Network } from "../constants";
 
 export interface ContractContextType {
     contractAddress?: string;
-    contractABI?: ethers.ContractInterface;
-    provider?: ethers.providers.JsonRpcProvider,
-    contract?: ethers.Contract;
+    contractABI?: ContractInterface;
+    providerURL?: string,
+    contract?: Contract;
+    chainId: string,
     setContractAddress: (contractAddress: string) => void;
-    setContractABI: (contractABI: ethers.ContractInterface) => void;
-    setProvider: (provider: ethers.providers.JsonRpcProvider) => void;
+    setContractABI: (contractABI: ContractInterface) => void;
+    setProviderURL: (providerURL: string) => void;
+    setChainId: (chainId: Network) => void;
 }
 
 export function ContractContextProvider({ children }: any) {
     const [contractAddress, setContractAddress] =useState("");
-    const [contractABI, setContractABI] = useState<ethers.ContractInterface | undefined>();
-    const [contract, setContract] = useState<ethers.Contract | undefined>();
-    const [provider, setProvider] = useState<ethers.providers.JsonRpcProvider | undefined>();
+    const [contractABI, setContractABI] = useState<ContractInterface | undefined>();
+    const [contract, setContract] = useState<Contract | undefined>();
+    const [providerURL, setProviderURL] = useState("");
+    const [chainId, setChainId] = useState<Network>(Network.Mainnet);
 
     useEffect(() => {
-        console.log(contractAddress, !!contractABI, provider);
-        
-        if(contractAddress && contractABI && provider) {
-            console.log('setting contract')
-            setContract(new ethers.Contract(contractAddress, contractABI, provider));
-        }
-    }, [contractAddress, contractABI, provider])
 
-    const value = { contractAddress, contractABI,contract, provider, setProvider, setContractAddress, setContractABI};
+        if(contractAddress && contractABI && providerURL) {
+            const network = providers.getNetwork(chainId);
+            const provider = new providers.JsonRpcProvider(providerURL, network);
+
+            setContract(new Contract(contractAddress, contractABI, provider));
+        }
+    }, [contractAddress, contractABI, providerURL, chainId])
+
+    const value = { contractAddress, contractABI,contract, providerURL, chainId, setProviderURL, setContractAddress, setContractABI, setChainId};
   
     return <ContractContext.Provider value={value}>{children}</ContractContext.Provider>;
 }

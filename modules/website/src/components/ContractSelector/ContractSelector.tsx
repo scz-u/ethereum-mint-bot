@@ -46,62 +46,59 @@ export default function ContractSelector() {
             contractContext.contractAddress && contractContext.contractABI
         if (contractSet) {
             return (
-                <Box borderWidth="1px" borderRadius="lg" borderColor="teal">
-                    <Center
-                        paddingTop="1rem"
-                        paddingLeft="1rem"
-                        paddingRight="1rem"
-                        paddingBottom="0.5rem"
-                    >
-                        <Text>
-                            Contract Address: {contractContext.contractAddress}{' '}
-                        </Text>
-                    </Center>
+                <>
+                    <Text>
+                        Contract Address: {contractContext.contractAddress}{' '}
+                    </Text>
+                    <Center p="1rem"></Center>
                     <Center>
-                    <Button
-                        h="1.75rem"
-                        size="sm"
-                        marginBottom="1rem"
-                        marginLeft="1rem"
-                        onClick={() => resetContract()}
-                    >
-                        Clear
-                    </Button>
+                        <Button
+                            h="1.75rem"
+                            size="sm"
+                            marginBottom="1rem"
+                            marginLeft="1rem"
+                            onClick={() => resetContract()}
+                        >
+                            Clear
+                        </Button>
                     </Center>
-                </Box>
+                </>
             )
         }
         return (
-            <InputGroup size="md">
-                <Input
-                    pr="4.5rem"
-                    type="text"
-                    placeholder="Enter contract address"
-                    isInvalid={!isValid}
-                    errorBorderColor="crimson"
-                    value={query}
-                    onChange={(e) => {
-                        setQuery(e.target.value)
-                    }}
-                />
-                <InputRightElement width="4.5rem" pr="5px">
-                    <Button
-                        h="1.75rem"
-                        size="sm"
-                        onClick={() => fetchContractABI()}
-                    >
-                        Search
-                    </Button>
-                </InputRightElement>
-            </InputGroup>
+            <>
+                <Text>Contract Address</Text>
+                <Center p="1rem">
+                    <InputGroup size="md">
+                        <Input
+                            pr="4.5rem"
+                            type="text"
+                            placeholder="Enter contract address"
+                            isInvalid={!isValid}
+                            errorBorderColor="crimson"
+                            value={query}
+                            onChange={(e) => {
+                                setQuery(e.target.value)
+                            }}
+                        />
+                        <InputRightElement width="4.5rem" pr="5px">
+                            <Button
+                                h="1.75rem"
+                                size="sm"
+                                onClick={() => fetchContractABI()}
+                            >
+                                Search
+                            </Button>
+                        </InputRightElement>
+                    </InputGroup>
+                </Center>
+            </>
         )
     }
 
     return (
-        <Box>
-            <Center>
-                {isLoading ? <Spinner color="blue" /> : <Contract />}
-            </Center>
+        <Box borderWidth="1px" borderRadius="lg" borderColor="teal" p="1rem">
+            {isLoading ? <Spinner color="blue" /> : <Contract />}
         </Box>
     )
 }
