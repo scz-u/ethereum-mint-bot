@@ -7,7 +7,7 @@
 A free bot for minting NFTs on the Ethereum network
 
 ## Preview:
-![preview](https://github.com/jfrazier-eth/ethereum-mint-bot/screenshots/website-preview.png)
+![preview](https://raw.githubusercontent.com/jfrazier-eth/ethereum-mint-bot/main/screenshots/website-preview.png)
 
 ## Goals:
 * No failed transactions 
