@@ -21,3 +21,9 @@ A free bot for minting NFTs on the Ethereum network
     * Network congestion and lost fees due to gas are minimized
     * To be more inclusive for people that are new to crypto/NFTs 
 
+
+## Contributing
+### Setup 
+* Install lerna globally - `npm i -g lerna`
+* Install dependencies - `yarn install`
+
