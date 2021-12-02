@@ -28,7 +28,7 @@ export function ContractContextProvider({ children }: any) {
             const provider = new providers.JsonRpcProvider(providerURL, network);
 
             setContract(new Contract(contractAddress, contractABI, provider));
-        }
+        } 
     }, [contractAddress, contractABI, providerURL, chainId])
 
     const value = { contractAddress, contractABI,contract, providerURL, chainId, setProviderURL, setContractAddress, setContractABI, setChainId};

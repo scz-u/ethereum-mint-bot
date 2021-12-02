@@ -10,13 +10,11 @@ import {
 import { JsonFragment } from '@ethersproject/abi'
 import React from 'react'
 
-
 interface Props {
     data: JsonFragment
 }
 
 export default function ContractMethodCard(props: Props) {
-
     return (
         <AccordionItem>
             <h2>
@@ -42,7 +40,9 @@ export default function ContractMethodCard(props: Props) {
                         </Box>
                     )
                 })}
-                <Button>Write</Button>
+                <Box m="0.25rem">
+                <Button bg="teal" color="white"> Write </Button>
+                </Box>
             </AccordionPanel>
         </AccordionItem>
     )

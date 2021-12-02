@@ -12,7 +12,7 @@ export default function ContractMethods() {
     const [contractMethods, setContractMethods] = useState<any[]>([])
 
     const resetContractMethods = () => {
-        setContractMethods([])
+        setContractMethods([]);
     }
 
     useEffect(() => {
