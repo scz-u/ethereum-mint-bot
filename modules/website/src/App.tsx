@@ -1,30 +1,37 @@
-import React from 'react'
-import Title from './components/atoms/Title'
-import SearchBar from './components/organisms/SearchBar'
-import ContractContext, { defaultContractContext } from './context/ContractContext';
-import { getContractABI } from './services/contract.service';
-
+import React, { useContext, useEffect, useState } from 'react'
+import ContractContext from './context/ContractContext'
+import { getContractABI } from './services/contract.service'
+import { providers } from 'ethers'
+import { Box, Center, Container } from '@chakra-ui/layout'
+import ContractSelector from './components/ContractSelector/ContractSelector'
+import Title from './components/Title/Title'
 
 function App() {
+    const [jsonProviderRPC, setJSONProviderRPC] = useState('')
+    const contractContext = useContext(ContractContext)
 
-  const search = async (query: string) => {
-    const abi = await getContractABI(query);
-    console.log(abi );
-  }
+    useEffect(() => {
+        contractContext.setProvider(
+            new providers.JsonRpcProvider(jsonProviderRPC, {
+                chainId: 1,
+                name: 'mainnet',
+            })
+        )
+    }, [jsonProviderRPC])
+
+    useEffect(() => {
+        console.log(contractContext.contractABI)
+    }, [contractContext])
 
     return (
-      <ContractContext.Provider value={defaultContractContext} >
-        <div style={{display: "flex", flexDirection: "column", justifyContent:"center", alignItems:"center"}}>
+        <Container>
 
-          <Title/>
-          <div style={{border: "2px solid black", borderRadius: "5px", padding: "5px", margin: "20px", display: "flex", width: "min-content"}}>
-
-          <SearchBar placeholder="Enter Contract Address" label="Enter Contract Address" onSubmit={search}/>
-          </div>
+            <Title/>
+            <ContractSelector />
 
 
-        </div>
-        </ContractContext.Provider>
+
+        </Container>
     )
 }
 
