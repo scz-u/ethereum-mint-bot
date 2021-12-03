@@ -4,20 +4,23 @@ import { useState } from 'react'
 import ContractContext from '../../context/ContractContext'
 import { getContractABI } from '../../services/contract.service'
 import { Spinner } from '@chakra-ui/spinner'
-import { Input, InputGroup } from '@chakra-ui/input'
+import { Input,InputGroup } from '@chakra-ui/react'
+
 import { Button } from '@chakra-ui/button'
 import { ethers } from 'ethers'
 import Section from '../Section/Section'
-import ProviderInput from '../ProviderInput/ProviderInput'
+
 import { getNetworkName } from '../../utils/getNetworkName'
 import { ErrorContext } from '../../context/ErrorContext'
+import NetworkSelector from '../NetworkSelector/NetworkSelector'
 
 export default function ContractSelector() {
     const contractContext = useContext(ContractContext)
     const [isLoading, setIsLoading] = useState(false)
     const [isValid, setIsValid] = useState(true)
-    const [query, setQuery] = useState<string>('');
-    const errorContext = useContext(ErrorContext);
+    const [query, setQuery] = useState<string>('')
+    const errorContext = useContext(ErrorContext)
+    const [provider, setProvider] = useState(contractContext.providerURL || '')
 
     useEffect(() => {
         if (query) {
@@ -31,12 +34,15 @@ export default function ContractSelector() {
         if (isValid) {
             setIsLoading(true)
 
-            const { result, error } = await getContractABI(query, contractContext.chainId)
+            const { result, error } = await getContractABI(
+                query,
+                contractContext.chainId
+            )
             if (result) {
                 contractContext.setContractAddress(query)
                 contractContext.setContractABI(result)
             } else if (error) {
-                errorContext.showError(error, "Error getting contract");
+                errorContext.showError(error, 'Error getting contract')
                 console.error(error)
             }
             setIsLoading(false)
@@ -47,6 +53,11 @@ export default function ContractSelector() {
         setQuery('')
         contractContext.setContractABI(undefined as any)
         contractContext.setContractAddress('')
+    }
+
+    const onSubmit = () => {
+        contractContext.setProviderURL(provider);
+        fetchContractABI()
     }
 
     const Contract = () => {
@@ -77,7 +88,23 @@ export default function ContractSelector() {
         }
         return (
             <>
-                <ProviderInput />
+                <Text>JSON RPC Provider URL</Text>
+                <Center p="1rem">
+                    <InputGroup size="md">
+                        <Input
+                            type="text"
+                            placeholder="Enter JSON RPC Provider URL"
+                            value={provider}
+                            onChange={(e) => {
+                                setProvider(e.target.value)
+                            }}
+                        />
+                    </InputGroup>
+                </Center>
+                <Text>Network</Text>
+                <Center p="1rem">
+                    <NetworkSelector />
+                </Center>
                 <Text>Contract Address</Text>
                 <Center p="1rem">
                     <InputGroup size="md">
@@ -92,15 +119,15 @@ export default function ContractSelector() {
                             }}
                         />
                     </InputGroup>
-                    
                 </Center>
                 <Center>
-
-                <Button
-                        disabled={!query || !isValid || !contractContext.providerURL}
+                    <Button
+                        disabled={
+                            !query || !isValid || !provider
+                        }
                         bg="teal"
                         color="white"
-                        onClick={() => fetchContractABI()}
+                        onClick={onSubmit}
                     >
                         Search
                     </Button>
