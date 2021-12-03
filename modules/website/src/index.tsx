@@ -4,13 +4,16 @@ import './index.css'
 import App from './App'
 import { ContractContextProvider } from './context/ContractContext'
 import { ChakraProvider } from '@chakra-ui/react'
+import { ErrorContextProvider } from './context/ErrorContext'
 
 ReactDOM.render(
     <React.StrictMode>
         <ContractContextProvider>
-            <ChakraProvider>
-                <App />
-            </ChakraProvider>
+            <ErrorContextProvider>
+                <ChakraProvider>
+                    <App />
+                </ChakraProvider>
+            </ErrorContextProvider>
         </ContractContextProvider>
     </React.StrictMode>,
 

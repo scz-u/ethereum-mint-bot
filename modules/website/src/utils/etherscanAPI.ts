@@ -1,14 +1,15 @@
 import { ContractInterface } from '@ethersproject/contracts';
 import axios from 'axios';
+import { Network } from '../constants';
 
 
-const client = axios.create({
-    baseURL: 'https://api.etherscan.io/api'
-});
-
-async function getContractABI(address: string): Promise<{result?: ContractInterface, error?: string}>{
+async function getContractABI(address: string, network: Network): Promise<{result?: ContractInterface, error?: string}>{
+    let url = 'https://api.etherscan.io/api'
+    if(network === Network.Goerli) {
+        url = 'https://api-goerli.etherscan.io/api'
+    }
     try {
-        const response = await client.get('', {
+        const response = await axios.get(url, {
             params: {
                 module: 'contract',
                 action: 'getabi',
@@ -22,7 +23,7 @@ async function getContractABI(address: string): Promise<{result?: ContractInterf
             return { result };
         } 
         console.log(`Failed to get contract: ${body?.status} ${body?.message}`);
-        return {error: body?.message};
+        return {error: body?.result};
     } catch (err) {
         console.error(err)
         return {error: 'unknown'};
